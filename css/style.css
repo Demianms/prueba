@@ -147,6 +147,7 @@ h1, h2, h3{
     font-size: 1.6rem;
     cursor: pointer;
     transition: background 0.9s;
+    text-decoration: none;
 }
 .boton:hover {
     background-color: #0056b3;

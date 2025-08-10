@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let valido = true;
         let errores = [];
 
-        // Validar nombre
+        //Validaciones
+        // Nombre
         const nombreVal = nombre.value.trim();
         if (!nombreVal) {
             valido = false;
@@ -22,26 +23,27 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Validar teléfono 
+        // Teléfono 
         const telefonoVal = telefono.value.trim().replace(/\D/g, ''); 
         if (!/^\d{10,}$/.test(telefonoVal)) {
             valido = false;
             errores.push('El teléfono debe tener al menos 10 dígitos y solo números.');
         }
 
-        // Validar correo
+        // Correo
         const correoVal = correo.value.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correoVal)) {
             valido = false;
             errores.push('El correo no es válido. Ejemplo: usuario@dominio.com');
         }
 
-        // Validar mensaje
+        // Mensaje
         if (!mensaje.value.trim()) {
             valido = false;
             errores.push('El mensaje es obligatorio.');
         }
 
+        // Mostrar errores
         if (!valido) {
             e.preventDefault();
             alert(errores.join('\n'));
